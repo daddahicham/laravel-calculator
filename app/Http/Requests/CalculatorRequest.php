@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 
 class CalculatorRequest extends FormRequest
 {
@@ -12,6 +14,18 @@ class CalculatorRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
+    }
+
+
+    public function messages(): array
+    {
+        return [
+            'number2.required' => 'Le Nombre 2 est obligé',
+            'number1.required' => 'Le Nombre 1 est obligé',
+            'number2.numeric' => 'Le Nombre 2 de dois etre numerique',
+            'number1.numeric' => 'Le Nombre 1 de dois etre numerique',
+            'umber1.required_if' => 'Impossible de diviser par 0. Assurez-vous que les deux nombres ne sont pas égaux à 0 pour la division.',
+        ];
     }
 
     /**
@@ -24,7 +38,7 @@ class CalculatorRequest extends FormRequest
         return [
             'number1' => 'required|numeric',
             'operation' => 'required|in:add,subtract,multiply,divide',
-            'number2' => 'required|numeric'
+            'number2' => 'required|numeric',
         ];
     }
 }

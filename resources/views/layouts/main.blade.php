@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel Calculator</title>*
     <style>
-           body {
+        body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             display: flex;
@@ -14,9 +15,13 @@
             height: 100vh;
             margin: 0;
         }
-        ul{
+
+        ul {
             list-style: none;
             padding: 0;
+            text-align: left;
+            padding: 8px;
+            margin: 0;
         }
 
         form {
@@ -67,13 +72,13 @@
         button:hover {
             background-color: #45a049;
         }
+
         .alert {
-            padding: 15px;
+            padding: 5px;
             border-radius: 5px;
             margin-bottom: 20px;
             font-size: 16px;
             color: #fff;
-            width: 300px;
             text-align: center;
         }
 
@@ -86,7 +91,9 @@
         }
     </style>
 </head>
+
 <body>
-    @yield("content")
+    @yield('content')
 </body>
+
 </html>
